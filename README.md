@@ -25,16 +25,20 @@ For example, the random number is 1234, the guess answer is 5614, and the prompt
 
 ### Development environment
 ```
-* Python 3.6
-* Windows 10
+* Python 3.6.6
+* macOS 10.13 High Sierra
 ```
 
 ### Version
 ```
 * Ver.1:
   None
+  
+* Ver1.2:
+  A. Shorten part of the code
+  B. Remove ctypes package 
 ```
 ### Other
 ```
-Only suitable for windows system implementation, will modify os and linux system in the next version
+Suitable for macOS, Linux, windows
 ```
