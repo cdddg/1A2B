@@ -45,7 +45,11 @@ For example, the random number is 1234, the guess answer is 5614, and the prompt
   
 * Ver1.2:
   A. Shorten part of the code
-  B. Remove ctypes package 
+  B. Remove ctypes package
+
+* Ver1.3:
+  A. Modify the printed text content
+  B. add picture
 ```
 ### Other
 ```
