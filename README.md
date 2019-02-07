@@ -1,7 +1,16 @@
+![img](https://raw.githubusercontent.com/cdddg/1A2B/master/pic/pic1.png)
+
+
+
+![img](https://raw.githubusercontent.com/cdddg/1A2B/master/pic/pic2.png)
+
+
+
 # 1A2B
+
 ```
 1A2B is a classic guessing number game
- ```
+```
 
 ### Game rules
 ```
@@ -42,3 +51,4 @@ For example, the random number is 1234, the guess answer is 5614, and the prompt
 ```
 Suitable for macOS, Linux, windows
 ```
+

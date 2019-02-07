@@ -1,6 +1,12 @@
 # ignore *.csv
+test*.py
+logs.py
+# *.png
 *.csv
+pipfile*
+
 
 # ignore folder
-.idea/
-venv/
+.idea
+.venv
+.vscode
