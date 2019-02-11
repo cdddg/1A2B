@@ -4,48 +4,70 @@
 import random
 import os
 import csv
+import sys
 
-googloDinosaur = """                        
-                                     MqggGq6p6ZZZ6ZZpZp6pMk           
-                                  lLTDDRDRDDDRDDDDDRDRDRDRDic:        
-                                  DDDMR:  YDg#d#dgd#g#d#g#MDDS        
-                                  RDGdBXiiZMgqgqgqgdgqgdgqg#Dl        
-                                  MDdddBRDMgqg6gqgdgq#qgd#dGRJ        
-                                  BRgqgd#dgdgq##BBRBDBDBRBDRDU        
-                                  MDqg6gqgqgqggMgBMBMBBDRDRDRk        
-                                  BR#qgqdqddggD2                      
-                                  gDddqgqdqg#DRDdGMBMBBD              
-      ,Kk                      :Y;MMgdgqgqgGB::rcckKkUOX              
-      YDD,                 .,. GRDMgqdqgqgqBM                         
-      iRD.                 MDRDRGggqgqgqgqgMR                         
-      ;DBBRD           DRDDDMM##qgqdqdqddddGDDDDDDk                   
-      iDMGRDqMk     JBqDDMBg#qdqgdgqg6dqgq#MD  :DDp                   
-      iD#gdMRDBYYUlYGDRMdgdgqdqg6gdgqdqgdgqRR   iY,                   
-      LDDG#d#gBDDRDDRdgqdqgqdqdqgqgqdqgqgq#RD                         
-      iDdBRBg#d#g#dgdg6gqgqgqg6gqdqgddqgd#RDR                         
-         PDDDG#qgqd6g6gqgqdqgqdqd6gqgqggMDJ;Y                         
-            DDRMg#qgqgqgqgqdqgqdqgqgq##DRD.                           
-            ,.rDDD#dgdgqddgqgqgqgqgqBRDS.:                            
-               k7QDDM#qgqgd#MDDBd#qBq7K,                              
-                 ,BS#G#qg#BRMSoMDMGDS                                 
-                    TDgGMRRDL  ODBBDp                                 
-                    XRBRDM        GRq                                 
-                    ODM           MDo                                 
-                    dDDrLi        DRDYp;                              
+
+googloDinosaur = '''
+                                     MqggGq6p6ZZZ6ZZpZp6pMk
+                                  lLTDDRDRDDDRDDDDDRDRDRDRDic:
+                                  DDDMR:  YDg#d#dgd#g#d#g#MDDS
+                                  RDGdBXiiZMgqgqgqgdgqgdgqg#Dl
+                                  MDdddBRDMgqg6gqgdgq#qgd#dGRJ
+                                  BRgqgd#dgdgq##BBRBDBDBRBDRDU
+                                  MDqg6gqgqgqggMgBMBMBBDRDRDRk
+                                  BR#qgqdqddggD2
+                                  gDddqgqdqg#DRDdGMBMBBD
+      ,Kk                      :Y;MMgdgqgqgGB::rcckKkUOX
+      YDD,                 .,. GRDMgqdqgqgqBM
+      iRD.                 MDRDRGggqgqgqgqgMR
+      ;DBBRD           DRDDDMM##qgqdqdqddddGDDDDDDk
+      iDMGRDqMk     JBqDDMBg#qdqgdgqg6dqgq#MD  :DDp
+      iD#gdMRDBYYUlYGDRMdgdgqdqg6gdgqdqgdgqRR   iY,
+      LDDG#d#gBDDRDDRdgqdqgqdqdqgqgqdqgqgq#RD
+      iDdBRBg#d#g#dgdg6gqgqgqg6gqdqgddqgd#RDR
+         PDDDG#qgqd6g6gqgqdqgqdqd6gqgqggMDJ;Y
+            DDRMg#qgqgqgqgqdqgqdqgqgq##DRD.
+            ,.rDDD#dgdgqddgqgqgqgqgqBRDS.:
+               k7QDDM#qgqgd#MDDBd#qBq7K,
+                 ,BS#G#qg#BRMSoMDMGDS
+                    TDgGMRRDL  ODBBDp
+                    XRBRDM        GRq
+                    ODM           MDo
+                    dDDrLi        DRDYp;
                     cM6RDG        QGgDRK
+'''
 
+title1 = '''
 
-\t\t\t\tGuess the number of game
+\t\t ██╗ █████╗ ██████╗ ██████╗
+\t\t███║██╔══██╗╚════██╗██╔══██╗
+\t\t╚██║███████║ █████╔╝██████╔╝
+\t\t ██║██╔══██║██╔═══╝ ██╔══██╗
+\t\t ██║██║  ██║███████╗██████╔╝
+\t\t ╚═╝╚═╝  ╚═╝╚══════╝╚═════╝
 
-For a set of numbers guessed, if the number is correct and the position is correct,
-you get "A". If the number is correct and wrong, 
-you get "B". Follow the prompts to guess the answer and finally get the correct answer.
+\t\t  Guess the number of game
 
-\t\t┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
-\t\t┃\t\tpress Enter to start\t\t┃
-\t\t┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
-"""
+For a set of numbers guessed,
+if the number is correct and the position is correct, you get "A".
+If the number is correct and wrong, you get "B".
+Follow the prompts to guess the answer and finally get the correct answer.
 
+\t\t  ┏━━━━━━━━━━━━━━━━━━━━┓
+\t\t  ┃press Enter to start┃
+\t\t  ┗━━━━━━━━━━━━━━━━━━━━┛
+'''
+
+title2 = '''
+
+██████╗ ███████╗ ██████╗ ██████╗ ██████╗ ██████╗
+██╔══██╗██╔════╝██╔════╝██╔═══██╗██╔══██╗██╔══██╗
+██████╔╝█████╗  ██║     ██║   ██║██████╔╝██║  ██║
+██╔══██╗██╔══╝  ██║     ██║   ██║██╔══██╗██║  ██║
+██║  ██║███████╗╚██████╗╚██████╔╝██║  ██║██████╔╝
+╚═╝  ╚═╝╚══════╝ ╚═════╝ ╚═════╝ ╚═╝  ╚═╝╚═════╝
+
+'''
 
 class YAXB(object):
 
@@ -53,7 +75,7 @@ class YAXB(object):
         print('setting default all answer list.')
         self.player1_random = ""
         self.random = "".join(random.sample(list('1234567890'), 4))
-        self.numarray = list()
+        self.numarray = []
         for i in range(123, 10000):
             i = str(i)
             if len(i) == 3:
@@ -134,6 +156,7 @@ class YAXB(object):
         text = [['Time']]
         default = self.numarray
         loop = 0
+        printText = ''
         while 1:
             loop += 1
             while True:
@@ -146,7 +169,7 @@ class YAXB(object):
             p1_a, p1_b = self.calculation(answer=answer_p1, source='pc')
             pc_a, pc_b = self.calculation(answer=answer_pc, source='player1')
 
-            pr = list()
+            pr = []
             """Find numbers that are probability answer"""
             for number in default:
                 _a, _b = 0, 0
@@ -156,12 +179,14 @@ class YAXB(object):
                 if _a == pc_a and (_b - _a) == pc_b:
                     pr += [number]
 
-            os.system('cls')
+            Playmode.clear()
             t = [f'{loop}', f'Player:{answer_p1} {p1_a}A{p1_b}B', f'PC:{answer_pc} {pc_a}A{pc_b}B']
             text += [t]
-            printText += '\n' + "\t".join(t)
+            if printText == '':
+                printText += title2 + '\n' + "\t".join(t)
+            else:
+                printText += '\n' + "\t".join(t)
             print(printText)
-
             """Break out for the correct answer"""
             if p1_a == 4 or pc_a == 4:
                 p1_result, pc_result = "", ""
@@ -188,14 +213,15 @@ class YAXB(object):
 
 class Playmode(object):
     def main(self):
-        print(f'{googloDinosaur}\n')
+        input(f'{title1}\n')
 
-        while True:
-            os.system('cls')
+        n = 0
+        while n >= 0:
+            if n != 0:
+                Playmode.clear()
             print('Welcome to guess the number of game, please to select game mode.\n')
             print('1. Random mode  - Computer to answer exercises.')
             print('2. Players mode  - Players against computer.')
-
             mode = input(': ')
             if mode == '1':
                 while True:
@@ -206,8 +232,10 @@ class Playmode(object):
                     except ValueError:
                         pass
                 self.pcgame(int(num))
+                n += 1
             elif mode == '2':
                 self.player1()
+                n += 1
 
     @staticmethod
     def pcgame(num=1):
@@ -228,7 +256,7 @@ class Playmode(object):
             max_v = int(resp[1]) if loop == 1 else (int(resp[1]) if int(resp[1]) > max_v else max_v)
             min_v = int(resp[1]) if loop == 1 else (int(resp[1]) if int(resp[1]) < min_v else min_v)
             loop += 1
-            print(max_v, min_v)
+            # print(max_v, min_v)
             print('-')
 
         text[1][1] = str(max_v)
@@ -250,7 +278,7 @@ class Playmode(object):
         while True:
             loop += 1
             text += [[], [f'Round{loop}']]
-            os.system('cls')
+            Playmode.clear()
             answer = ''.join(random.sample(list('1234567890'), 4))
             resp = AB.probability_player1(answer)
             text += [_ for _ in resp[1]]
@@ -263,6 +291,13 @@ class Playmode(object):
         csvCursor.writerows(text)
         f.close()
         input('Records is saving. press key to exit.')
+
+    def clear():
+        if os.name == 'posix':
+            # pass
+            os.system('clear')
+        else:
+            os.system('cls')
 
     # def Player2(self):
     #     pass
