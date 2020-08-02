@@ -13,14 +13,16 @@
 
 
 ```python
-# player solove pc riddle
-GameMode().player2pc()
+>> python NAMB --help
 
-# pc solove pc riddle
-GameMode().pc2pc()
+usage: NAMB [-h] [--player2pc | --pc2pc | --pc2player | --pc2prompt]
 
-# pc solove player riddle
-GameMode().pc2player(input('riddle:'))
+optional arguments:
+  -h, --help   show this help message and exit
+  --player2pc  player solve the pc riddle
+  --pc2pc      pc1 solve the pc2 riddle
+  --pc2player  pc solve the player riddle
+  --pc2prompt  pc solve the problem according to the prompt
 ```
 
 
